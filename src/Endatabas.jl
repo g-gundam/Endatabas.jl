@@ -21,6 +21,11 @@ function query(db::ENDB, sql::String)
     return JSON3.read(res.body)
 end
 
+"""
+    query(db::ENDB, sql::String, params; bulk::Bool=false)
+
+Send a query to the database and return the resultset.
+"""
 function query(db::ENDB, sql::String, params; bulk::Bool=false)
     headers = ["Content-Type" => "application/json"]
     body = JSON3.write(Dict(:q => sql, :p => params, :m => bulk))

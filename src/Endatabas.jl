@@ -17,14 +17,14 @@ end
 function query(db::ENDB, sql::String)
     headers = ["Content-Type" => "application/json"]
     body = JSON3.write(Dict(:q => sql))
-    res = HTTP.post(db.endpoint, headers, body)
+    res = HTTP.post(db.endpoint, headers, body; db.http_options...)
     return JSON3.read(res.body)
 end
 
 function query(db::ENDB, sql::String, params; bulk::Bool=false)
     headers = ["Content-Type" => "application/json"]
     body = JSON3.write(Dict(:q => sql, :p => params, :m => bulk))
-    res = HTTP.post(db.endpoint, headers, body)
+    res = HTTP.post(db.endpoint, headers, body; db.http_options...)
     return JSON3.read(res.body)
 end
 

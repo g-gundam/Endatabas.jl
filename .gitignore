@@ -1,5 +1,6 @@
 *.jl.*.cov
 *.jl.cov
 *.jl.mem
+.*.~undo-tree~
 /docs/Manifest.toml
 /docs/build/

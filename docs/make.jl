@@ -1,3 +1,4 @@
+push!(LOAD_PATH, "../src/")
 using Endatabas
 using Documenter
 
@@ -14,6 +15,8 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "API" => "api.md",
+        "Examples" => "examples.md",
     ],
 )
 

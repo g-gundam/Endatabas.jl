@@ -17,7 +17,7 @@ A client library for the Endatabas database
   + Rows are structured documents.
 - Its dialect of SQL can have a JSON-ish accent at times which feels natural if you're accustomed to JSON.
 - It maintains an "immutable" history of the database, and you can query the database about past states.
-- It was written by the developer of [XTDB](https://github.com/xtdb/xtdb) which also cares a lot about time.
+- It was written by the developer of [XTDB](https://github.com/xtdb/xtdb) which is another database that cares about time and history.
 - It's implemented in a combination of Rust and Common Lisp.
 - They have a docker container that makes it really easy to get started with it.
 

@@ -2,13 +2,48 @@
 CurrentModule = Endatabas
 ```
 
-# Endatabas
+# Endatabas.jl
 
-Documentation for [Endatabas](https://github.com/g-gundam/Endatabas.jl).
+[Endatabas.jl](https://github.com/g-gundam/Endatabas.jl) is a Julia client for the
+[Endatabas](https://www.endatabas.com/) database.
 
-```@index
+## What is Endatabas?
+
+- [Endatabas](https://www.endatabas.com/) is one of the most fascinating databases I've encountered recently.
+- It's schemaless
+  + ...but it can be queried with SQL.
+- You can just start inserting data and tables will autovivify.
+  + The rows you insert can contain nested data.
+  + Rows are structured documents.
+- Its dialect of SQL can have a JSON-ish accent at times which feels natural if you're accustomed to JSON.
+- It maintains an "immutable" history of the database, and you can query the database about past states.
+- It was written by the developer of [XTDB](https://github.com/xtdb/xtdb) which is another database that cares about time and history.
+- It's implemented in a combination of Rust and Common Lisp.
+- They have a docker container that makes it really easy to get started with it.
+
+## Installation
+
+```julia-repl
+julia> ]
+
+(v1.10) pkg> add Endatabas
 ```
 
-```@autodocs
-Modules = [Endatabas]
+## Usage
+
+```julia
+# This exports ENDB and query()
+using Endatabas 
+
+# Construct ENDB handle
+endb = ENDB()
+
+# Query
+query(endb, "INSERT INTO issues {id: 1, title: ?}", ["Weird query crashes server"])
+query(endb, "SELECT * FROM issues")
+query(endb, "SELECT id, title FROM issues")
+query(endb, "SELECT {id, title} FROM issues")
 ```
+
+
+

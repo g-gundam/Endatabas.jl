@@ -1,7 +1,7 @@
 name = "Endatabas"
 uuid = "3c24e884-fd8b-4642-9948-3255f4665db5"
 authors = ["contributors"]
-version = "1.0.0"
+version = "1.0.1"
 
 [deps]
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"

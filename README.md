@@ -31,7 +31,7 @@ julia> ]
 ## Usage
 
 ```julia
-# This exports ENDB and query(endb, sql, params)
+# This exports ENDB and query()
 using Endatabas 
 
 # Construct ENDB handle
